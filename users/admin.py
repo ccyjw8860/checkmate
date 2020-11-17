@@ -6,11 +6,16 @@ from . import models
 class CustomUserAdmin(UserAdmin):
 
     """Custom User Admin"""
-    fieldsets = ('username', 'email', 'gender', 'birthdate')
+
+    fieldsets = UserAdmin.fieldsets + (
+        ("Custom Profile", {"fields": ('gender', 'birthdate', 'enrolled')},),
+    )
 
     list_display = (
         'username',
         'email',
         'gender',
-        'birthdate'
+        'birthdate',
     )
+
+    list_filter = ()
