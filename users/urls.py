@@ -3,4 +3,4 @@ from . import views
 
 app_name = 'users'
 
-urlpatterns = [path('',views.list_users)]
+urlpatterns = [path('',views.ListUsersView.as_view())]

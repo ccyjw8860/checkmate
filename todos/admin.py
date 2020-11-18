@@ -10,10 +10,10 @@ class TodoAdmin(admin.ModelAdmin):
         "end_date",
         'is_group',
         'evidence_text',
-        'user'
+        'users'
     )
 
 
-@admin.register(models.Photo)
+@admin.register(models.TodoPhoto)
 class PhotoAdmin(admin.ModelAdmin):
     pass

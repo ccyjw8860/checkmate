@@ -4,12 +4,12 @@ from users import models as user_model
 
 # Create your models here.
 
-class Photo(models.Model):
+class TodoPhoto(models.Model):
     """ Photo model definition"""
 
     discription = models.TextField(default='')
     file = models.ImageField(upload_to='evidence_photos')
-    todo = models.ForeignKey('todo', on_delete=models.CASCADE, related_name='photos')
+    todo = models.ForeignKey('todo', on_delete=models.CASCADE, related_name='todo_photos')
 
     def __str__(self):
         return self.todo.name
@@ -22,7 +22,8 @@ class Todo(models.Model):
     end_date = models.DateField(default=False)
     is_group = models.BooleanField(default=False)
     evidence_text = models.CharField(max_length=300, blank=True)
-    user = models.ForeignKey(user_model.User, on_delete=models.CASCADE, related_name='todos')
+    is_success = models.BooleanField(default=False)
+    users = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='todos')
 
     def __str__(self):
         return self.name

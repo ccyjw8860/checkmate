@@ -11,6 +11,6 @@ class RoomAdmin(admin.ModelAdmin):
 
 
 
-@admin.register(models.Photo)
+@admin.register(models.RoomPhoto)
 class PhotoAdmin(admin.ModelAdmin):
     pass
