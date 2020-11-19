@@ -9,7 +9,7 @@ class TodoPhoto(models.Model):
 
     discription = models.TextField(default='')
     file = models.ImageField(upload_to='evidence_photos')
-    todo = models.ForeignKey('todo', on_delete=models.CASCADE, related_name='todo_photos')
+    todo = models.ForeignKey('todos.Todo', on_delete=models.CASCADE, related_name='todo_photos')
 
     def __str__(self):
         return self.todo.name

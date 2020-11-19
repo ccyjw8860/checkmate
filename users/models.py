@@ -18,6 +18,5 @@ class User(AbstractUser):
 
     gender = models.CharField(choices=GENDER_CHOICES, max_length=10,blank=True)
     birthdate = models.DateField(blank=True, null=True)
-    enrolled = models.ManyToManyField('rooms.Room', related_name='users')
-
+    rooms = models.ManyToManyField('rooms.Room', related_name='users')
 

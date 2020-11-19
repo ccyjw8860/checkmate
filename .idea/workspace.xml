@@ -2,31 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da81f64-a1de-442a-b272-e428c9f93708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rooms/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rooms/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rooms/management/commands/seed_rooms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rooms/migrations/0002_room_host.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rooms/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/management/commands/seed_users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rooms/migrations/0003_auto_20201119_1607.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todos/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todos/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todos/management/commands/seed_todos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yjw_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rooms/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/management/commands/seed_rooms.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/management/commands/seed_rooms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rooms/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/migrations/0002_room_host.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/migrations/0002_room_host.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rooms/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rooms/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rooms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rooms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todos/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/migrations/0002_auto_20201117_1552.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/migrations/0002_todo_users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todos/migrations/0002_todo_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/migrations/0002_todo_users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/seed_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/seed_users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_user_enrolled.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
@@ -55,11 +55,12 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/todos" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\creator-club\checkmate\todos" />
       <recent name="E:\creator-club\checkmate\users" />
       <recent name="E:\creator-club\checkmate\rooms\management\command" />
     </key>
@@ -80,7 +81,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.seed_rooms">
+    <configuration name="seed_rooms" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="checkmate" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rooms/management/commands" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rooms/management/commands/seed_rooms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="seed_todos" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="checkmate" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/todos/management/commands" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/todos/management/commands/seed_todos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="serializers" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="checkmate" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,8 +145,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="yjw_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="checkmate" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yjw_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.seed_rooms" />
+        <item itemvalue="Python.seed_todos" />
+        <item itemvalue="Python.yjw_test" />
         <item itemvalue="Python.serializers" />
       </list>
     </recent_temporary>

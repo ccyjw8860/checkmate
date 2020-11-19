@@ -10,6 +10,7 @@ django = "==2.2.5"
 pillow = "*"
 djangorestframework = "*"
 django-seed = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.8"

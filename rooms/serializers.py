@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Room
+from .models import Room, RoomPhoto
 from users.models import User
 from todos.models import Todo
 
@@ -12,14 +12,25 @@ class RoomUserSerializer(serializers.ModelSerializer):
     todos = RoomTodoSerializer(many=True, read_only=True)
     class Meta:
         model = User
-        fields = ('id','username', 'todos')
+        fields = ('id', 'username','gender', 'todos')
+
+class RoomPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=RoomPhoto
+        fields = ('file',)
 
 class RoomSerializer(serializers.ModelSerializer):
     users = RoomUserSerializer(many=True, read_only=True)
-
+    photos = RoomPhotoSerializer(many=True, read_only=True)
     class Meta:
-        ordering = ['-id']
+        ordering = ['-pk']
         model = Room
-        fields = ('id','title', 'description', 'host', 'users')
+        fields = ('pk','title', 'description', 'host', 'photos', 'users')
         extra_kwargs = {'users':{'required':False}}
 
+class OneRoomSerializer(serializers.ModelSerializer):
+    users = RoomUserSerializer(many=True, read_only=True)
+    photos = RoomPhotoSerializer(many=True, read_only=True)
+    class Meta:
+        model = Room
+        fields = ('title', 'description', 'host', 'photos', 'users')
