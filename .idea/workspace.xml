@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da81f64-a1de-442a-b272-e428c9f93708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rooms/migrations/0003_auto_20201119_1607.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todos/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todos/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todos/management/commands/seed_todos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yjw_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/management/commands/seed_rooms.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/management/commands/seed_rooms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/migrations/0002_room_host.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/migrations/0002_room_host.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rooms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rooms/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/migrations/0002_todo_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/migrations/0002_todo_users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/management/commands/seed_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/seed_users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>

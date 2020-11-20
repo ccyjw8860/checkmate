@@ -34,3 +34,16 @@ class UserView(APIView):
             return Response(status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_403_FORBIDDEN)
+
+class MeView(APIView):
+    def get(self, request):
+        user = request.user
+        print(request)
+        # print(user.is_authenticated)
+        serializer = UserSerializer(user)
+        # print(dir(serializer))
+
+        return Response(serializer.data)
+
+    def put(self, request):
+        pass
