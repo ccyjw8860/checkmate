@@ -24,6 +24,7 @@ class Todo(models.Model):
     evidence_text = models.CharField(max_length=300, blank=True)
     is_success = models.BooleanField(default=False)
     users = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='todos')
+    rooms = models.ManyToManyField('rooms.Room', related_name='todos')
 
     def __str__(self):
         return self.name

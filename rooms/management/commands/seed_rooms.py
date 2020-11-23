@@ -31,6 +31,7 @@ titles = [
     '하루 푸쉬업 100회하기'
 ]
 room_photo_filenames = os.listdir('./uploads/rooms')
+all_users = User.objects.all()
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
@@ -39,11 +40,11 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         times = options.get('times')
         seeder = Seed.seeder()
-        all_users = User.objects.all()
+
         seeder.add_entity(Room, times, {
             'title': lambda x: random.choice(titles),
             'description' : lambda x: seeder.faker.text(),
-            'host': lambda x: random.choice(all_users)
+            'host': lambda x: random.choice(all_users),
         })
         created_rooms = seeder.execute()
         created_clean = flatten(list(created_rooms.values()))

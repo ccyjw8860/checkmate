@@ -11,7 +11,6 @@ class RoomPhoto(models.Model):
     def __str__(self):
         return self.room.title
 
-
 class Room(models.Model):
     title = models.CharField(max_length=140)
     description = models.TextField()

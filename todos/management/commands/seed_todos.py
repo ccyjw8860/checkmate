@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.contrib.admin.utils import flatten
 from todos.models import Todo, TodoPhoto
+from rooms.models import Room
 from users.models import User
 from django_seed import Seed
 from datetime import datetime, timedelta
@@ -48,6 +49,7 @@ names = [
 today = datetime.now()
 today = today.date()
 todo_photo_filenames = os.listdir('./uploads/evidences')
+rooms = Room.objects.all()
 
 def get_start_date():
     return today + timedelta(days=random.randint(-10,10))
@@ -86,3 +88,8 @@ class Command(BaseCommand):
                         discription = seeder.faker.sentence(),
                         todo=todo
                     )
+            howmany = random.randint(0,3)
+            if howmany > 0:
+                for i in range(howmany):
+                    room = random.choice(rooms)
+                    todo.rooms.add(room)

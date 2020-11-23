@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
 from django.utils.html import mark_safe
+from rooms.models import Room
 
 @admin.register(models.TodoPhoto)
 class ToDoPhotoAdmin(admin.ModelAdmin):
