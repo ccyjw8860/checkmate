@@ -140,3 +140,5 @@ cython_debug/
 #win
 uploads/
 node_modules
+secret.json
+secret.json

@@ -22,7 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/users', include('users.urls')),
     path('api/v1/todos', include('todos.urls')),
-    path('api/v1/rooms', include('rooms.urls'))
+    path('api/v1/rooms', include('rooms.urls')),
+    path('account/', include('rest_auth.urls')),
+    path('account/registration/', include('rest_auth.registration.urls')),
+    path('account/', include('allauth.urls')),
+    # url(r'account/registration/confirm-email/(?P<key>.+)/$', confirm_email, name='confirm_email'),
+    path('', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
