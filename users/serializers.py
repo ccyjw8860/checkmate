@@ -25,7 +25,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id','username', 'email', 'gender', 'birthdate', 'todos', 'rooms')
+        fields = ('id', 'email', 'date_of_birth', 'todos', 'rooms')
 
 class ChoiceField(serializers.ChoiceField):
 

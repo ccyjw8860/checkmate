@@ -1,22 +1,24 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils.translation import ugettext_lazy as _
 
-# Create your models here.
+from .managers import CustomUserManager
+
 class User(AbstractUser):
+    # username = None
+    email = models.EmailField(_('email address'), unique=True)
 
-    """Custom User model"""
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
-    GENDER_MALE = 'male'
-    GENDER_FEMALE = 'female'
-    GENDER_OTHER = 'other'
+    objects = CustomUserManager()
 
-    GENDER_CHOICES = (
-        (GENDER_MALE, "Male"),
-        (GENDER_FEMALE, "Female"),
-        (GENDER_OTHER, "Other"),
-    )
-
-    gender = models.CharField(choices=GENDER_CHOICES, max_length=10,blank=True)
-    birthdate = models.DateField(blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
     rooms = models.ManyToManyField('rooms.Room', related_name='users')
+
+    def __str__(self):
+        return self.email
+
+
+
 

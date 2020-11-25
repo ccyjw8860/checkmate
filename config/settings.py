@@ -150,7 +150,6 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'users.User'
 
 #Django Rest Framework
-
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     "PAGE_SIZE":10,
@@ -168,13 +167,24 @@ LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/?verification=1'
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/?verification=1'
+
+SITE_ID = 1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 MEDIA_URL = '/media/'
 
-SITE_ID = 1
+with open(os.path.join(BASE_DIR, 'config/secret.json'), 'rb') as secret_file:
+    secret = json.loads(secret_file.read())
 
-with open('../secret.json') as config_buffer:
-    secret = json.loads(config_buffer.read())
-
-SOCIALACCOUNT_PROVIDERS = secret
+SOCIALACCOUNT_PROVIDERS = secret['settings']

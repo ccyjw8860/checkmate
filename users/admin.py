@@ -8,14 +8,12 @@ class CustomUserAdmin(UserAdmin):
     """Custom User Admin"""
 
     fieldsets = UserAdmin.fieldsets + (
-        ("Custom Profile", {"fields": ('gender', 'birthdate', 'rooms')},),
+        ("Custom Profile", {"fields": ('date_of_birth', 'rooms')},),
     )
 
     list_display = (
-        'username',
         'email',
-        'gender',
-        'birthdate',
+        'date_of_birth',
     )
 
     list_filter = ()

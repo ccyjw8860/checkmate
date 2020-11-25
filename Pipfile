@@ -13,6 +13,7 @@ django-seed = "*"
 numpy = "*"
 django-rest-auth = "*"
 django-allauth = "*"
+djangorestframework-jwt = "*"
 
 [requires]
 python_version = "3.8"
