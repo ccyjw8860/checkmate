@@ -26,7 +26,7 @@ SECRET_KEY = 'wf9i-=w_j3(puf_w^v68=qn_!1f=+$$)l22mj5ixo7@d!&=&d6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ad2c29d86b0c.ngrok.io', '127.0.0.1']
 
 
 # Application definition
@@ -62,7 +62,8 @@ THIRD_PARTY_APPS = [
     'rest_auth.registration',
 
     #provider
-    'allauth.socialaccount.providers.kakao'
+    'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.naver',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS

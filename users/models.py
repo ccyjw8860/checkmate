@@ -5,15 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from .managers import CustomUserManager
 
 class User(AbstractUser):
-    # username = None
-    email = models.EmailField(_('email address'), unique=True)
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-
-    objects = CustomUserManager()
-
-    date_of_birth = models.DateField(blank=True, null=True)
+    login_method = models.CharField(max_length=5, default='kakao')
     rooms = models.ManyToManyField('rooms.Room', related_name='users')
 
     def __str__(self):
