@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "412fe29179654fa148d036df7e74d1c45ece958758a2103546afbff0afeb81a3"
+            "sha256": "98fde3145e693576c64048faee7bb65bd79c8854e0b44dabb9e837783df181b5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -104,6 +104,13 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==0.6.0"
         },
+        "dj-rest-auth": {
+            "hashes": [
+                "sha256:c0d3495d3629f54644966da31611ca4619b8470978ae8bdc03f6b87e04cb562c"
+            ],
+            "index": "pypi",
+            "version": "==2.1.1"
+        },
         "django": {
             "hashes": [
                 "sha256:148a4a2d1a85b23883b0a4e99ab7718f518a83675e4485e44dc0c1d36988c5fa",
@@ -163,6 +170,16 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.10"
+        },
+        "mysqlclient": {
+            "hashes": [
+                "sha256:3f39855a4ad22805361e782cc4d1010ac74796225fa2d1c03cc16673ccdc983a",
+                "sha256:a6b5648f648b16335e3b1aaec93dc3fcc81a9a661180e306936437cc522c810b",
+                "sha256:edd42ccaa444b00702d5374b2f5f7585c9d0ce201917f15339f1c3cf91c1b1ed",
+                "sha256:fb2f75aea14722390d2d8ddf384ad99da708c707a96656210a7be8af20a2c5e5"
+            ],
+            "index": "pypi",
+            "version": "==2.0.1"
         },
         "numpy": {
             "hashes": [

@@ -5,7 +5,8 @@ from rest_framework.response import Response
 
 from .models import User
 from .serializers import UserSerializer, MakeUserSerializer
-from rest_auth.registration.views import SocialLoginView
+from dj_rest_auth.registration.views import SocialLoginView
+from allauth.socialaccount.providers.kakao.views import KakaoOAuth2Adapter
 from allauth.socialaccount.providers.kakao import views as kakao_views
 from allauth.socialaccount.providers.naver import views as naver_views
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
@@ -76,12 +77,17 @@ def kakao_callback(request):
     k_id = os.getenv('KAKAO_CLIENT_ID')
     r_uri = 'http://127.0.0.1:8001/api/v1/users/login/kakao/callback'
     user_token = request.GET.get("code")
+    print('===================user_token===================')
+    print(user_token)
+    print('===================user_token===================')
     token_request = requests.get(
         f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={k_id}&redirect_uri={r_uri}&code={user_token}"
     )
     token_response_json = token_request.json()
     error = token_response_json.get("error", None)
-
+    print('===================token_response===================')
+    print(token_response_json)
+    print('===================token_response===================')
     if error is not None:
         return Response(status.HTTP_400_BAD_REQUEST)
     else:
@@ -91,9 +97,9 @@ def kakao_callback(request):
             headers={"Authorization": f"Bearer {access_token}"},
         )
         profile_json = profile_request.json()
-        # print('-------------profile---------------')
-        # print(profile_json)
-        # print('-------------profile---------------')
+        print('-------------profile---------------')
+        print(profile_json)
+        print('-------------profile---------------')
         username = str(profile_json.get('id'))
 
         # user_in_db = User.objects.get(username=username)
@@ -143,5 +149,6 @@ def kakao_callback(request):
         # return redirect("http://127.0.0.1:8000/")  # 메인 페이지
 
 class KakaoToDjangoLogin(SocialLoginView):
-    adapter_class = kakao_views.KakaoOAuth2Adapter
+    adapter_class = KakaoOAuth2Adapter
+    callback_url = 'http://127.0.0.1:8001/api/v1/users/login/kakao/callback'
     client_class = OAuth2Client
