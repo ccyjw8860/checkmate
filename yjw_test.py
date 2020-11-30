@@ -1,8 +1,6 @@
-import os
-from dotenv import load_dotenv
+from users.models import User
 
-load_dotenv()
-test = os.getenv('GITHUB_CLIENT_ID')
-print(test)
+user = User.objects.get(username='yjw8860')
+print(user)
 
 

@@ -55,7 +55,8 @@ class UserView(APIView):
 class MeView(APIView):
     def get(self, request):
         user = request.user
-        print(request)
+        print(user)
+        print(vars(request))
         # print(user.is_authenticated)
         serializer = UserSerializer(user)
         # print(dir(serializer))
@@ -97,6 +98,17 @@ def kakao_callback(request):
             headers={"Authorization": f"Bearer {access_token}"},
         )
         profile_json = profile_request.json()
+        new_id = profile_json.get("id")
+        new_nickname = profile_json['properties']['nickname']
+        new_username = f'{new_id}_{new_nickname}'
+        try:
+            user_check = User.objects.get(username=new_id)
+            print('success')
+        except User.DoesNotExist:
+            print('failed')
+            pass
+        # if user_check is None:
+
         print('-------------profile---------------')
         print(profile_json)
         print('-------------profile---------------')
@@ -111,6 +123,7 @@ def kakao_callback(request):
         print('-------------accept_json---------------')
         print(accept_json)
         print('-------------accept_json---------------')
+        return redirect('http://127.0.0.1:8001/api/v1/users/me/')
         # 이미 kakao로 가입된 유저라면
         # if user_in_db is not None:
         #     # 서비스에 rest-auth 로그인
@@ -130,7 +143,6 @@ def kakao_callback(request):
                 #                                         profile_image=profile_image,
                 #                                         is_active=True
                 #                                         )
-
         # except User.DoesNotExist:
         #     # 서비스에 rest-auth 로그인
         #     data = {'code': user_token, 'access_token': access_token}
