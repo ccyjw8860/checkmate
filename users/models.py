@@ -10,8 +10,4 @@ class User(AbstractUser):
     rooms = models.ManyToManyField('rooms.Room', related_name='users')
 
     def __str__(self):
-        return self.email
-
-
-
-
+        return self.username

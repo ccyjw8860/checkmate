@@ -1,5 +1,5 @@
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.views import APIView
+from rest_framework.views import APIView, View
 from rest_framework import status
 from rest_framework.response import Response
 
@@ -159,6 +159,7 @@ def kakao_callback(request):
         #                                             is_active=True
         #                                             )
         # return redirect("http://127.0.0.1:8000/")  # 메인 페이지
+
 
 class KakaoToDjangoLogin(SocialLoginView):
     adapter_class = KakaoOAuth2Adapter
