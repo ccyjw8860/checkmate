@@ -1,9 +1,13 @@
-from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework.views import APIView, View
+from rest_framework import permissions
 from rest_framework import status
+from rest_framework.generics import ListAPIView
+from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.contrib.auth import login
 from .serializers import UserSerializer
+from .permissions import IsOwner
 import requests
 from django.shortcuts import redirect
 from .models import User
@@ -14,6 +18,25 @@ load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))   # 프로젝트/accounts
 with open(os.path.join(BASE_DIR, 'config\secret.json'), 'rb') as secret_file:
     secrets = json.load(secret_file)
+
+class UserViewSet(ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def get_permissions(self):
+        if self.action == 'list':
+            permission_classes = [permissions.IsAdminUser]
+        elif self.action == 'retrieve' or self.action == 'create':
+            permission_classes = [permissions.IsAuthenticated]
+        else:
+            permission_classes = [IsOwner]
+        return [p() for p in permission_classes]
+
+    @action(detail=True, methods=['get'])
+    def messss(self, request, pk):
+        print(pk)
+        print(request.user)
+        return Response(status=status.HTTP_200_OK)
 
 class UsersView(ListAPIView):
     queryset = User.objects.all()

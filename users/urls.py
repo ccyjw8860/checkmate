@@ -1,17 +1,12 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
-from allauth.account.views import confirm_email
-from django.conf.urls import url
-from django.contrib import admin
-from dj_rest_auth import urls
+from rest_framework.routers import DefaultRouter
 
 app_name = 'users'
+router = DefaultRouter()
+router.register(r"", views.UserViewSet)
 
-urlpatterns = [path('/me/',views.MeView.as_view()),
-               path('/<int:pk>/', views.UserView.as_view()),
-               path('/login/kakao/', views.kakao_login),
-               path('/login/kakao/callback/', views.kakao_callback),
-               # path('/login/kakao/todjango', KakaoToDjangoLogin.as_view()),
-               # path('/dj-rest-auth/', include('dj_rest_auth.urls')),
-               # path('/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'))
-               ]
+extra_patterns = [path('login/kakao/', views.kakao_login),
+                  path('login/kakao/callback/', views.kakao_callback)]
+
+urlpatterns = router.urls + extra_patterns
