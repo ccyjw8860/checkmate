@@ -12,12 +12,17 @@ class RoomUserSerializer(serializers.ModelSerializer):
     todos = RoomTodoSerializer(many=True, read_only=True)
     class Meta:
         model = User
-        fields = ('id', 'username','gender', 'todos')
+        fields = ('id', 'username','todos')
 
 class RoomPhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model=RoomPhoto
         fields = ('file',)
+
+class UsernameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id',)
 
 class RoomSerializer(serializers.ModelSerializer):
     users = RoomUserSerializer(many=True, read_only=True)
@@ -29,7 +34,7 @@ class RoomSerializer(serializers.ModelSerializer):
         extra_kwargs = {'users':{'required':False}}
 
 class OneRoomSerializer(serializers.ModelSerializer):
-    users = RoomUserSerializer(many=True, read_only=True)
+    users = UsernameSerializer(many=True, read_only=True)
     photos = RoomPhotoSerializer(many=True, read_only=True)
     class Meta:
         model = Room

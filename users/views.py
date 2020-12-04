@@ -6,10 +6,12 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.contrib.auth import login
+from django.shortcuts import redirect
 from .serializers import UserSerializer, UserRoomSerializer
 from .permissions import IsOwner
+from rooms.serializers import OneRoomSerializer
 import requests
-from django.shortcuts import redirect
+
 from .models import User
 import os, json
 from dotenv import load_dotenv
@@ -42,7 +44,7 @@ class UserViewSet(ModelViewSet):
     @action(detail=True)
     def rooms(self, request, pk):
         user = self.get_object()
-        serializer = UserRoomSerializer(user.rooms.all(), many=True).data
+        serializer = OneRoomSerializer(user.rooms.all(), many=True).data
         return Response(serializer)
 
 
