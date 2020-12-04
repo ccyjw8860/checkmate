@@ -34,3 +34,9 @@ class OneRoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
         fields = ('title', 'description', 'host', 'photos', 'users')
+
+class UserRoomSerializer(serializers.ModelSerializer):
+    photos = RoomPhotoSerializer(many=True, read_only=True)
+    class Meta:
+        model = Room
+        fields = ('title', 'description', 'host', 'photos')

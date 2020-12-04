@@ -6,7 +6,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.contrib.auth import login
-from .serializers import UserSerializer
+from .serializers import UserSerializer, UserRoomSerializer
 from .permissions import IsOwner
 import requests
 from django.shortcuts import redirect
@@ -30,52 +30,21 @@ class UserViewSet(ModelViewSet):
             permission_classes = [permissions.IsAuthenticated]
         else:
             permission_classes = [IsOwner]
-        return [p() for p in permission_classes]
+        return [permission() for permission in permission_classes]
 
-    @action(detail=True, methods=['get'])
-    def messss(self, request, pk):
-        print(pk)
-        print(request.user)
-        return Response(status=status.HTTP_200_OK)
-
-class UsersView(ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-class UserView(APIView):
-    def get_object(self, pk):
-        try:
-            user = User.objects.get(pk=pk)
-            return user
-        except User.DoesNotExist:
-            return None
-
-    def get(self, request, pk):
-        user = self.get_object(pk)
-        if user is not None:
-            serializer = UserSerializer(user).data
-            return Response(serializer)
-        else:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-    def delete(self,request, pk):
-        owner_user = self.get_object(pk)
-        request_user = request.user
-        if owner_user == request_user:
-            owner_user.delete()
-            return Response(status=status.HTTP_200_OK)
-        else:
-            return Response(status=status.HTTP_403_FORBIDDEN)
-
-class MeView(APIView):
-    def get(self, request):
+    @action(detail=False, methods=['get', 'put', 'delete'])
+    def me(self, request):
         user = request.user
         serializer = UserSerializer(user)
 
         return Response(serializer.data)
 
-    def put(self, request):
-        pass
+    @action(detail=True)
+    def rooms(self, request, pk):
+        user = self.get_object()
+        serializer = UserRoomSerializer(user.rooms.all(), many=True).data
+        return Response(serializer)
+
 
 def kakao_login(request):
     k_id = os.getenv('KAKAO_CLIENT_ID')
