@@ -9,11 +9,9 @@ class TodoViewSet(ModelViewSet):
     serializer_class = TodoSerializer
 
     def get_permissions(self):
-        if self.action == 'retrieve':
-            permission_classes = [permissions.AllowAny]
-        elif self.action == 'list':
+        if self.action == 'list':
             permission_classes = [permissions.IsAdminUser]
-        elif self.action == 'create':
+        elif self.action == 'create' or self.action == 'retrieve':
             permission_classes = [permissions.IsAuthenticated]
         else:
             permission_classes = [IsOwner]
