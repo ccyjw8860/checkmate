@@ -6,7 +6,7 @@ app_name = 'users'
 router = DefaultRouter()
 router.register(r"", views.UserViewSet)
 
-extra_patterns = [path('login/kakao/', views.kakao_login),
-                  path('login/kakao/callback/', views.kakao_callback)]
+# extra_patterns = [path('login/kakao/', views.kakao_login),
+#                   path('login/kakao/callback/', views.kakao_callback)]
 
-urlpatterns = router.urls + extra_patterns
+urlpatterns = router.urls
